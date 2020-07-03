@@ -1,18 +1,11 @@
 # vue_todo
 
-> A Vue.js project
+Vue.js로 할 일 관리 앱(ToDoApp)을 만들기
 
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-```
-
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## 구현 단계
+1. 프로젝트 생성하고 구조 확인하기
+  a. 뷰 CLI를 이용한 프로젝트 생성
+  b. 프로젝트 초기 설정
+     - 반응형 웹 디자인 태그 설정
+     - 아이콘 CSS 설정
+     - 폰트와 파비콘 설정
