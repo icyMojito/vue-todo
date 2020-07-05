@@ -5,14 +5,28 @@
     <span class="addContainer" v-on:click="addTodo">
       <i class="addBtn fas fa-plus" aria-hidden="true"></i>
     </span>
+
+    <modal v-if="showModal" @close="showModal = false">
+      <h3 slot="header">
+        <i class="fas fa-exclamation-triangle"></i>
+        경고
+      </h3>
+      <span slot="footer" @click="showModal = false">
+        할 일을 적어주세요!
+        <i class="closeModalBtn fas fa-times" style="color: #ff6b6b" aria-hidden="true"></i>
+      </span>
+    </modal>
   </div>
 </template>
 
 <script>
+import Modal from './common/Modal.vue'
+
 export default {
   data() {
     return {
-      newTodoItem: ''
+      newTodoItem: '',
+      showModal: false
     }
   },
   methods: {
@@ -21,11 +35,17 @@ export default {
         const value = this.newTodoItem && this.newTodoItem.trim();
         this.$emit('addTodo', value);
         this.clearInput();
+      } else {
+        this.showModal = !this.showModal;
+        this.clearInput();
       }
     },
     clearInput() {
       this.newTodoItem = '';
     }
+  },
+  components: {
+    Modal: Modal
   }
 }
 </script>
